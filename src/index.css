@@ -1,21 +1,14 @@
 body {
   margin: 0;
-<<<<<<< HEAD
   padding: 0;
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-=======
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
->>>>>>> c5d1999 (Initialize project using Create React App)
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-<<<<<<< HEAD
   font-family:
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
@@ -987,9 +980,6 @@ code {
 
 .card-group:hover .card-group-img {
   transform: scale(1.05);
-}
-.card-group-content {
-  /* margin-top: -30px; */
 }
 
 .card-group-content h3 {
@@ -4426,8 +4416,4 @@ code {
   .signup-title {
     font-size: 20px;
   }
-=======
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
->>>>>>> c5d1999 (Initialize project using Create React App)
 }
