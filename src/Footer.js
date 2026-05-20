@@ -52,7 +52,9 @@ const Footer = () => {
               'Sale',
             ].map((item) => (
               <li key={item}>
-                <a href="#">{item}</a>
+                <a href="https://example.com">
+                  {item}
+                </a>
               </li>
             ))}
           </ul>
