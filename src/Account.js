@@ -375,11 +375,11 @@ export default function Account() {
 
         <p className="terms">
           By continuing, you agree to our{' '}
-          <a href="#!" className="link">
+          <a href="#" className="link">
             Terms of Service
           </a>{' '}
           and{' '}
-          <a href="#!" className="link">
+          <a href="#" className="link">
             Privacy Policy
           </a>
           .

@@ -1,11 +1,18 @@
 import React from 'react'
-import { BsGeoAlt, BsQuestionCircle, BsPerson, BsCart3 } from 'react-icons/bs'
+import {
+  BsGeoAlt,
+  BsQuestionCircle,
+  BsPerson,
+  BsCart3,
+} from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from './context/AppContext'
 
 const Header = () => {
   const [ActiveDropdown, setActiveDropdown] = React.useState(null)
   const [searchQuery, setSearchQuery] = React.useState('')
+  const [menuOpen, setMenuOpen] = React.useState(false)
+
   const { cartCount, user, signOut } = useApp()
   const navigate = useNavigate()
 
@@ -13,6 +20,7 @@ const Header = () => {
     e.preventDefault()
     if (searchQuery.trim()) {
       navigate(`/Category?search=${encodeURIComponent(searchQuery.trim())}`)
+      setMenuOpen(false)
     }
   }
 
@@ -27,7 +35,7 @@ const Header = () => {
           <input
             className="input"
             type="text"
-            placeholder="Search for products..."
+            placeholder="Search products, categories and brands..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -36,18 +44,20 @@ const Header = () => {
           </button>
         </form>
 
-        {/* Icons */}
+        {/* Icons 1 */}
         <div className="icons1">
           <Link to="/location" className="location-icon">
             <BsGeoAlt />
             <span>Location</span>
           </Link>
+
           <Link to="/help" className="help-icon">
             <BsQuestionCircle />
             <span>Help</span>
           </Link>
         </div>
 
+        {/* Icons 2 */}
         <div className="icons2">
           {user ? (
             <div
@@ -57,6 +67,7 @@ const Header = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                position: 'relative',
               }}
               onClick={() =>
                 setActiveDropdown(ActiveDropdown === 'user' ? null : 'user')
@@ -74,6 +85,7 @@ const Header = () => {
               >
                 {user.fullName.split(' ')[0]}
               </span>
+
               {ActiveDropdown === 'user' && (
                 <div
                   style={{
@@ -101,6 +113,7 @@ const Header = () => {
                   >
                     My Account
                   </Link>
+
                   <div
                     style={{
                       padding: '10px 20px',
@@ -122,13 +135,14 @@ const Header = () => {
             </Link>
           )}
 
-          {/* Cart with badge */}
+          {/* Cart */}
           <Link
             to="/Cart"
             className="cart-icon"
             style={{ position: 'relative' }}
           >
             <BsCart3 />
+
             {cartCount > 0 && (
               <span
                 style={{
@@ -150,13 +164,24 @@ const Header = () => {
                 {cartCount > 99 ? '99+' : cartCount}
               </span>
             )}
+
             <span>Cart</span>
           </Link>
+        </div>
+
+        {/* Hamburger */}
+        <div
+          className={menuOpen ? 'hamburger active' : 'hamburger'}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="nav-bar">
+      <nav className={menuOpen ? 'nav-bar active' : 'nav-bar'}>
         <ul>
           <li>
             <Link to="/Home">Home</Link>
@@ -177,7 +202,6 @@ const Header = () => {
             <Link to="/Checkout">Checkout</Link>
           </li>
 
-          {/* DROPDOWN */}
           <li
             className="dropdown"
             onMouseEnter={() => setActiveDropdown('dropdown')}
@@ -185,50 +209,6 @@ const Header = () => {
           >
             <span>Dropdown ▾</span>
             {ActiveDropdown === 'dropdown' && (
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to="/electronics">Electronics</Link>
-                </li>
-                <li>
-                  <Link to="/clothes">Clothes</Link>
-                </li>
-                <li>
-                  <Link to="/shoes">Shoes</Link>
-                </li>
-              </ul>
-            )}
-          </li>
-
-          {/* MEGAMENU 1 */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setActiveDropdown('megamenu1')}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <span>Megamenu1 ▾</span>
-            {ActiveDropdown === 'megamenu1' && (
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to="/electronics">Electronics</Link>
-                </li>
-                <li>
-                  <Link to="/clothes">Clothes</Link>
-                </li>
-                <li>
-                  <Link to="/shoes">Shoes</Link>
-                </li>
-              </ul>
-            )}
-          </li>
-
-          {/* MEGAMENU 2 */}
-          <li
-            className="dropdown"
-            onMouseEnter={() => setActiveDropdown('megamenu2')}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <span>Megamenu2 ▾</span>
-            {ActiveDropdown === 'megamenu2' && (
               <ul className="dropdown-menu">
                 <li>
                   <Link to="/electronics">Electronics</Link>

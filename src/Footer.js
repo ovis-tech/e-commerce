@@ -33,7 +33,7 @@ const Footer = () => {
               BsPinterest,
               BsYoutube,
             ].map((Icon, i) => (
-              <a key={i} href="#!" className="social-btn">
+              <a key={i} href="#" className="social-btn">
                 <Icon />
               </a>
             ))}
@@ -52,7 +52,7 @@ const Footer = () => {
               'Sale',
             ].map((item) => (
               <li key={item}>
-                <a href="#!">{item}</a>
+                <a href="#">{item}</a>
               </li>
             ))}
           </ul>
@@ -70,7 +70,7 @@ const Footer = () => {
               'Contact Us',
             ].map((item) => (
               <li key={item}>
-                <a href="#!">{item}</a>
+                <a href="#">{item}</a>
               </li>
             ))}
           </ul>
@@ -125,15 +125,9 @@ const Footer = () => {
         <div className="footer-bottom-right">
           <div className="pay-icons">{/* add payment SVG icons here */}</div>
           <div className="footer-legal">
-            <a href="#!" className="link">
-              Terms
-            </a>
-            <a href="#!" className="link">
-              Privacy
-            </a>
-            <a href="#!" className="link">
-              Cookies
-            </a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookies</a>
           </div>
           <button
             className="scroll-top-btn"

@@ -17,11 +17,11 @@ import { FaBoxOpen } from 'react-icons/fa'
 import { useApp } from './context/AppContext'
 
 const images = [
-  '/image/jbl1.jpg',
+  '/image/jbl1.avif',
   '/image/jbl2.jpg',
-  '/image/jbl3.jpg',
-  '/image/jbl4.jpg',
-  '/image/jbl5.jpg',
+  '/image/jbl3.png',
+  '/image/jbl4.png',
+  '/image/jbl5.webp',
 ]
 
 const colors = [
@@ -35,7 +35,7 @@ const features = [
   {
     icon: <TbWaveSine />,
     title: 'Premium Sound',
-    desc: "Enjoy deep bass and crystal-clear highs with JBL's signature sound technology.",
+    desc: 'Enjoy deep bass and crystal-clear highs with JBLs signature sound technology.',
   },
   {
     icon: <TbBattery2 />,
@@ -45,7 +45,7 @@ const features = [
   {
     icon: <BiBluetooth />,
     title: 'Seamless Pairing',
-    desc: "Connect effortlessly to your devices with JBL's advanced Bluetooth technology.",
+    desc: 'Connect effortlessly to your devices with JBLs advanced Bluetooth technology.',
   },
   {
     icon: <BiDiamond />,
@@ -153,7 +153,7 @@ const PRODUCT = {
   title: 'JBL CHARGE 5 Bluetooth Speaker',
   price: 189.99,
   oldPrice: 239.99,
-  image: '/image/jbl1.jpg',
+  image: '/image/jbl1.avif',
 }
 
 const ProductDetails = () => {

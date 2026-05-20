@@ -207,13 +207,14 @@ const DealsCard = memo(({ id, badge, image, title, oldPrice, newPrice }) => {
           style={{ backgroundImage: `url(${image})` }}
         />
       </div>
+      
       <h3>{title}</h3>
       <div className="deals-price">
         {oldPrice && <span className="old-price">{fmt(oldPrice)}</span>}
         <span className="new-price">{fmt(newPrice)}</span>
       </div>
       <button
-        className="cart-btn"
+        className="cart-btnn"
         onClick={() => {
           addToCart({
             id: id || title,
